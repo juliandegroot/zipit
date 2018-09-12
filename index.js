@@ -53,7 +53,7 @@ $(document).on('drop', function(e) {
 
 	    if(file['size'] > 15000000)
 	    {
-		    alert("This file size exceeds the recommended use. Files over 15MB may fail to encrypt.");
+		    alert("Dit bestand is groter dan 15MB en zal waarschijnlijk problemen opleveren bij het versleutelen.");
 	    }
 
 
@@ -115,7 +115,7 @@ function encrypt(result, name, type)
 	{
 		$('#dropzone').removeClass('done');
 		$('#dropzone .default').html(original_dropzone);
-				console.log("return fuck it all");
+				console.log("oops");
 		return;
 	}
 
@@ -144,12 +144,12 @@ function encrypt(result, name, type)
 
 				try
 				{
-					console.log("start encrypting");
+					console.log("Start versleuteling");
 					result = sjcl.encrypt(pass, result);
 				}
 				catch(e)
 				{
-					alert("Your browser was unable to encrypt this file.");
+					alert("De browser kon het bestand niet versleutelen.");
 					console.log(e);
 				}
 
@@ -224,7 +224,7 @@ $('#file-select').change(function()
 
 	    if(input.files[0]['size'] > 15000000)
 	    {
-		    alert("This file size exceeds the recommended use. Files over 15MB may fail to encrypt.");
+		    alert("Dit bestand is groter dan 15MB en zal waarschijnlijk problemen opleveren bij het versleutelen.");
 	    }
 
 	    encrypt(result, input.files[0]['name'], input.files[0]['type']);
