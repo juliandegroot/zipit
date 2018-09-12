@@ -126,15 +126,15 @@ function encrypt(result, name, type)
     }
 
 
-	$('#status-encrypting span').text("Please enter a new password...");
+	$('#status-encrypting span').text("Geef een nieuw wachtwoord op...");
 	$('#status-encrypting').show(0, function()
 	{
 		$('#dropzone .title').text(name);
 	    $("#dropzone").addClass('running');
-		var pass = prompt("Create a password for this file (required)");
+		var pass = prompt("Geef een wachtwoord op voor dit bestand (vereist)");
 		if(pass)
 		{
-			$('#status-encrypting span').text("Your file is encrypting...");
+			$('#status-encrypting span').text("Jouw bestand is nu aan het versleutelen...");
 
 			setTimeout(function()
 			{
@@ -183,7 +183,7 @@ function encrypt(result, name, type)
 				}
 				else
 				{
-					alert("Password invalid...");
+					alert("Wachtwoord verkeerd...");
 				}
 			}, 50);
 
